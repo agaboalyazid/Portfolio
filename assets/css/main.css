@@ -69,7 +69,7 @@ button{font:inherit;color:inherit}
 .block-title .label{white-space:nowrap}
 
 /* ---------- Hero ---------- */
-.hero{padding:104px 0 96px}
+.hero{padding:104px 0 112px}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:64px;align-items:center}
 .hero h1{font-size:clamp(34px,1.3rem + 2.8vw,56px);line-height:1.08;letter-spacing:-.025em;margin-top:18px}
 .hero .intro{font-size:19px;line-height:1.6;max-width:560px;margin-top:22px}
@@ -99,8 +99,12 @@ button{font:inherit;color:inherit}
 .project-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:24px;list-style:none;padding:0}
 .project-grid > li{grid-column:span 3}
 .project-grid > li[data-category="analytics"]{grid-column:span 2}
-.card{position:relative;display:flex;flex-direction:column;height:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:border-color .15s}
-.card:hover{border-color:var(--border-strong)}
+.card{position:relative;display:flex;flex-direction:column;height:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--border-strong);transform:translateY(-2px)}
+.card .label{font-size:11.5px}
+.card-visual .flow{max-width:100%}
+.card-visual .flow .node{padding:10px 6px}
+.card:hover .more{text-decoration:underline;text-underline-offset:3px}
 .card-visual{height:190px;background:var(--sunken);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;padding:24px}
 .project-grid > li[data-category="analytics"] .card-visual{height:160px}
 .card-visual.has-img{padding:0;overflow:hidden}
@@ -166,8 +170,8 @@ button{font:inherit;color:inherit}
 .cert-list .verify{text-align:right}
 
 /* ---------- Services & reviews ---------- */
-.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;list-style:none;padding:0}
-.services li{border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;background:var(--surface)}
+.services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:36px 40px;list-style:none;padding:0}
+.services li{border-top:1px solid var(--border-strong);padding-top:20px}
 .services .label{color:var(--accent)}
 .services h3{font-size:17px;margin-top:10px}
 .services p{font-size:15px;color:var(--muted);margin-top:6px}
@@ -195,7 +199,8 @@ button{font:inherit;color:inherit}
 
 /* ---------- Footer ---------- */
 .site-footer{border-top:1px solid var(--border);padding:32px 0 44px;font-size:14px;color:var(--muted)}
-.site-footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.site-footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px 24px;flex-wrap:wrap}
+.site-footer .foot-links{display:flex;gap:20px;flex-wrap:wrap}
 .site-footer a{color:var(--muted)}
 .site-footer a:hover{color:var(--ink)}
 
@@ -306,7 +311,8 @@ button{font:inherit;color:inherit}
   .simple-table tr:last-child{border-bottom:0}
   .simple-table th,.simple-table td,.simple-table td.when{padding:0;border:0;text-align:left;white-space:normal}
   .skills,.services,.reviews,.contact{grid-template-columns:minmax(0,1fr)}
-  .skills li,.services li{padding:20px}
+  .skills li{padding:20px}
+  .services{gap:28px}
   .review{padding:22px}
   .contact{gap:40px}
   .cert-list li{grid-template-columns:minmax(0,1fr) auto;gap:2px 12px}
