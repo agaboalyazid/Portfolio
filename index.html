@@ -45,16 +45,24 @@
   <section class="hero" id="home" aria-labelledby="hero-title">
     <div class="wrap">
       <div class="hero-grid">
-        <div>
-          <p class="label">Data Engineer | Data Analyst</p>
-          <h1 id="hero-title">I build reliable data pipelines and turn clean data into reports people use.</h1>
-          <p class="intro">SQL Server, Python and Power BI. Based in Egypt, working remotely. Open to full-time, contract and freelance work.</p>
+        <div class="hero-intro">
+          <p class="hero-meta"><span class="label">Data Engineer | Data Analyst</span><span class="loc"><svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 1.5a4.5 4.5 0 0 0-4.5 4.5c0 3.2 4.5 8.5 4.5 8.5s4.5-5.3 4.5-8.5A4.5 4.5 0 0 0 8 1.5Zm0 6.2a1.7 1.7 0 1 1 0-3.4 1.7 1.7 0 0 1 0 3.4Z" fill="currentColor"/></svg>Remote — Egypt</span></p>
+          <h1 id="hero-title">Ashraf Aboalyazid</h1>
+          <p class="tagline">I build reliable data pipelines and turn clean data into reports people use.</p>
+          <div class="summary">
+            <p>I started in data analysis: writing SQL, cleaning messy datasets and building Excel and Power BI dashboards that answer business questions. That work showed me how much a report depends on what happens before it, so my focus now is data engineering: ETL pipelines, layered warehouses and data models that keep reporting consistent.</p>
+            <p>I enjoy the problem-solving side of data: finding out why numbers don't match, cleaning data until it can be trusted, and building solutions people actually use. I work with SQL, Python, SQL Server and SQLite, and visualise results in Power BI and Excel.</p>
+          </div>
           <div class="actions"><a class="btn btn-primary" href="#projects">View projects</a><a class="btn btn-secondary" href="#contact">Get in touch</a></div>
+          <p class="availability">Open to full-time, contract and freelance work.</p>
         </div>
-        <figure class="hero-figure">
-          <div class="fig-head"><span class="label">How data moves through my warehouse</span><span class="label engine">SQL Server</span></div>
-          <div class="flow" role="img" aria-label="Data flow: sources to Bronze, Silver and Gold layers, then reports"><div class="node">Sources<small>CRM + ERP CSV</small></div><div class="arrow"></div><div class="node">Bronze<small>raw</small></div><div class="arrow"></div><div class="node">Silver<small>cleaned</small></div><div class="arrow"></div><div class="node key">Gold<small>star schema</small></div><div class="arrow"></div><div class="node">Reports<small>BI · SQL</small></div></div>
-          <figcaption><span>From the SQL Server Data Warehouse project</span><a class="btn btn-subtle btn-sm" href="projects/sql-data-warehouse/index.html">View project<span class="visually-hidden">: SQL Server Data Warehouse</span> →</a></figcaption>
+        <figure class="erd-figure">
+          <div class="erd" role="img" aria-label="Star schema from my SQL Server Data Warehouse: fact_sales links to dim_customers through customer_key and to dim_products through product_key">
+            <div class="entity e-cust"><div class="e-head"><span class="e-name">dim_customers</span><span class="e-kind">dim</span></div><ul><li class="pk"><span class="k">PK</span>customer_key</li><li class=""><span class="k"></span>customer_id</li><li class=""><span class="k"></span>country</li><li class=""><span class="k"></span>gender</li></ul><span class="rel" aria-hidden="true"><svg class="crow" viewBox="0 0 10 12" focusable="false"><path d="M0 6H10M10 0L0 6L10 12" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></span></div>
+            <div class="entity e-prod"><div class="e-head"><span class="e-name">dim_products</span><span class="e-kind">dim</span></div><ul><li class="pk"><span class="k">PK</span>product_key</li><li class=""><span class="k"></span>product_name</li><li class=""><span class="k"></span>category</li><li class=""><span class="k"></span>cost</li></ul><span class="rel" aria-hidden="true"><svg class="crow" viewBox="0 0 10 12" focusable="false"><path d="M0 6H10M10 0L0 6L10 12" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></span></div>
+            <div class="entity e-fact"><div class="e-head"><span class="e-name">fact_sales</span><span class="e-kind">fact</span></div><ul><li class=""><span class="k"></span>order_number</li><li class="fk fk-cust"><span class="k">FK</span>customer_key</li><li class="fk fk-prod"><span class="k">FK</span>product_key</li><li class=""><span class="k"></span>order_date</li><li class=""><span class="k"></span>sales_amount</li><li class=""><span class="k"></span>quantity</li></ul></div>
+          </div>
+          <figcaption><span>Gold layer of my <b>SQL Server Data Warehouse</b>: one fact, two dimensions.</span><a class="btn btn-subtle btn-sm" href="projects/sql-data-warehouse/index.html">View project<span class="visually-hidden">: SQL Server Data Warehouse</span> →</a></figcaption>
         </figure>
       </div>
       <dl class="stats">
