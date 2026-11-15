@@ -1,4 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="8" fill="#004c98"/>
-  <text x="16" y="22" font-family="Arial" font-size="13" font-weight="700" fill="white" text-anchor="middle">DE</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#111418"/><path d="M14 44h36" stroke="#4FC3A8" stroke-width="3"/><text x="32" y="36" text-anchor="middle" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="24" font-weight="500" fill="#FAFAF7">AA</text></svg>
