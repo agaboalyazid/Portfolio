@@ -42,27 +42,31 @@
   </div>
 </header>
 <main id="main">
+  <div class="project-hero">
+    <div class="wrap">
+      <a class="text-link back" href="../../index.html#projects">← All projects</a>
+      <header class="project-head">
+        <p class="label">Data engineering · Jan 2026</p>
+        <h1>SQL Server Data Warehouse</h1>
+        <p class="intro">A three-layer warehouse that turns raw exports from two source systems into clean, analytics-ready tables.</p>
+        <div class="actions"><a class="btn btn-primary" href="https://github.com/agaboalyazid/sql-data-warehouse-project">View repository on GitHub ↗</a></div>
+        <dl class="facts"><div><dt>Type</dt><dd>Data warehouse · ETL</dd></div><div><dt>Stack</dt><dd>SQL Server · T-SQL · draw.io</dd></div><div><dt>Learning source</dt><dd>Data with Baraa (course-based)</dd></div><div><dt>Built by</dt><dd>Personally implemented</dd></div></dl>
+      </header>
+    </div>
+  </div>
   <div class="wrap">
-    <a class="text-link back" href="../../index.html#projects">← All projects</a>
-    <header class="project-head">
-      <p class="label">Data engineering · Jan 2026</p>
-      <h1>SQL Server Data Warehouse</h1>
-      <p class="intro">A three-layer warehouse that turns raw exports from two source systems into clean, analytics-ready tables.</p>
-      <div class="actions" style="margin-top:24px"><a class="btn btn-primary" href="https://github.com/agaboalyazid/sql-data-warehouse-project">View repository on GitHub ↗</a></div>
-      <dl class="facts"><div><dt>Type</dt><dd>Data warehouse · ETL</dd></div><div><dt>Stack</dt><dd>SQL Server · T-SQL · draw.io</dd></div><div><dt>Learning source</dt><dd>Data with Baraa (course-based)</dd></div><div><dt>Built by</dt><dd>Personally implemented</dd></div></dl>
-    </header>
     <div class="project-body">
-      <section aria-labelledby="s-overview"><h2 id="s-overview">Overview</h2>
+      <section aria-labelledby="s-overview"><h2 id="s-overview"><span class="num">01</span>Overview</h2>
         <p>Customer, product and sales data came from two systems, CRM and ERP, with inconsistent codes, duplicate customer records, invalid dates and sales values that did not match quantity × price. The warehouse cleans and models the data in three layers inside SQL Server.</p>
         <figure class="figure"><div class="flow" role="img" aria-label="Architecture: CSV sources load into Bronze, then Silver, then Gold views used for reporting"><div class="node">CRM + ERP<small>6 CSV files</small></div><div class="arrow"></div><div class="node">Bronze<small>raw tables</small></div><div class="arrow"></div><div class="node">Silver<small>cleaned tables</small></div><div class="arrow"></div><div class="node key">Gold<small>star-schema views</small></div><div class="arrow"></div><div class="node">BI · SQL<small>reporting</small></div></div>
           <figcaption>Fig. 1 · Architecture, redrawn from the project's draw.io diagram</figcaption></figure>
       </section>
-      <section aria-labelledby="s-sources"><h2 id="s-sources">Data sources</h2>
+      <section aria-labelledby="s-sources"><h2 id="s-sources"><span class="num">02</span>Data sources</h2>
         <div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">System</th><th scope="col">File</th><th scope="col">Contents</th></tr></thead><tbody>
         <tr><td>CRM</td><td><code>cust_info.csv</code></td><td>Customers: names, marital status, gender, create date</td></tr><tr><td>CRM</td><td><code>prd_info.csv</code></td><td>Products: key, cost, product line, start date</td></tr><tr><td>CRM</td><td><code>sales_details.csv</code></td><td>Order lines: dates, quantity, price, sales</td></tr><tr><td>ERP</td><td><code>CUST_AZ12.csv</code></td><td>Customer birthdate and gender</td></tr><tr><td>ERP</td><td><code>LOC_A101.csv</code></td><td>Customer country</td></tr><tr><td>ERP</td><td><code>PX_CAT_G1V2.csv</code></td><td>Product categories and maintenance flag</td></tr>
         </tbody></table></div>
       </section>
-      <section aria-labelledby="s-built"><h2 id="s-built">What I built</h2>
+      <section aria-labelledby="s-built"><h2 id="s-built"><span class="num">03</span>What I built</h2>
         <ul>
           <li>T-SQL stored procedures that load the six CSV sources into Bronze tables (<code>TRUNCATE</code> + <code>BULK INSERT</code>), with load timing and <code>TRY/CATCH</code> error handling</li>
           <li>Silver-layer cleaning: latest-record de-duplication with <code>ROW_NUMBER</code>, code decoding, date fixes, sales and price recalculation, country normalisation</li>
@@ -70,14 +74,14 @@
           <li>Quality-check scripts, a data catalog, naming conventions, and architecture, data-flow and data-model diagrams</li>
         </ul>
       </section>
-      <section aria-labelledby="s-model"><h2 id="s-model">Gold layer: star schema</h2>
+      <section aria-labelledby="s-model"><h2 id="s-model"><span class="num">04</span>Gold layer: star schema</h2>
         <figure class="figure"><div class="schema" role="img" aria-label="Star schema: fact_sales links to dim_customers and dim_products">
           <div class="table"><b>gold.dim_customers</b><span>customer_key (PK)</span><span>customer_id · customer_number</span><span>first_name · last_name</span><span>country · marital_status</span><span>gender · birthday · create_date</span></div>
           <div class="table key"><b>gold.fact_sales</b><span>order_number</span><span>product_key (FK)</span><span>customer_key (FK)</span><span>order_date · shipping_date · due_date</span><span>sales_amount · quantity · price</span></div>
           <div class="table"><b>gold.dim_products</b><span>product_key (PK)</span><span>product_id · product_number</span><span>product_name · category_id</span><span>category · subcategory · maintenance</span><span>cost · product_line · start_date</span></div>
         </div><figcaption>Fig. 2 · Star schema, redrawn from the project's data model</figcaption></figure>
       </section>
-      <section aria-labelledby="s-quality"><h2 id="s-quality">Data quality checks</h2>
+      <section aria-labelledby="s-quality"><h2 id="s-quality"><span class="num">05</span>Data quality checks</h2>
         <p>The Silver tables are checked with <code>test/quality_checks_silver.sql</code>. Each query is written so that a correct table returns no rows.</p>
         <div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">Check</th><th scope="col">Expected result</th></tr></thead><tbody>
           <tr><td>Null or duplicate primary keys</td><td>No rows</td></tr>
@@ -88,7 +92,7 @@
           <tr><td>Birthdates out of range</td><td>Between 1924-01-01 and today</td></tr>
         </tbody></table></div>
       </section>
-      <section aria-labelledby="s-code"><h2 id="s-code">Code excerpt</h2>
+      <section aria-labelledby="s-code"><h2 id="s-code"><span class="num">06</span>Code excerpt</h2>
 <pre class="code" tabindex="0" aria-label="Code excerpt from proc_load_silver.sql"><code>SELECT *,
     ROW_NUMBER() OVER (PARTITION BY cst_id
                        ORDER BY cst_create_date DESC) AS flag_last
@@ -97,13 +101,13 @@ WHERE cst_id IS NOT NULL
 -- keep flag_last = 1: the most recent record per customer</code></pre>
         <p class="muted" style="font-size:14px">Adapted from <code>scripts/silver/proc_load_silver.sql</code></p>
       </section>
-      <section aria-labelledby="s-next"><h2 id="s-next">Next steps</h2>
+      <section aria-labelledby="s-next"><h2 id="s-next"><span class="num">07</span>Next steps</h2>
         <ul><li>Incremental loads instead of full reloads</li><li>Parameterise the hard-coded source file paths</li><li>Add quality checks on the Gold layer</li><li>Build a Power BI report on top of the Gold layer</li></ul>
         <p class="note">This page describes only what is in the repository. It's a course-based project that I implemented myself; no performance figures are claimed.</p>
       </section>
       <nav class="pager" aria-label="More projects">
-        <a class="text-link" href="../../index.html#projects">← All projects</a>
-        <a class="text-link" href="../../projects/largest-banks-etl/index.html">Next: Largest Banks ETL Pipeline →</a>
+        <a href="../../index.html#projects"><span>Back</span>← All projects</a>
+        <a class="next" href="../../projects/largest-banks-etl/index.html"><span>Next project</span>Largest Banks ETL Pipeline →</a>
       </nav>
     </div>
   </div>
