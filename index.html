@@ -50,8 +50,8 @@
           <h1 id="hero-title">Ashraf Aboalyazid</h1>
           <p class="tagline">I build reliable data pipelines and turn clean data into reports people use.</p>
           <div class="summary">
-            <p>I started in data analysis, working in SQL, cleaning messy datasets and building Excel and Power BI dashboards, and learned how much a report depends on what happens before it. My focus now is data engineering: ETL pipelines, layered warehouses and data models that keep reporting consistent.</p>
-            <p>I like finding out why numbers don't match and building data solutions people actually use, mainly with SQL, Python, SQL Server and SQLite.</p>
+            <p>I started in data analytics, working with SQL, data cleaning, Excel, and Power BI. This experience led me toward data engineering, where I focus on building ETL pipelines, data warehouses, and reliable data models.</p>
+            <p>I enjoy solving data problems and building practical solutions using SQL, Python, SQL Server, and SQLite.</p>
           </div>
           <div class="actions"><a class="btn btn-primary" href="#projects">View projects</a><a class="btn btn-secondary" href="#contact">Get in touch</a></div>
           <p class="availability">Open to full-time, contract and freelance work.</p>
@@ -231,33 +231,32 @@
           <div class="tbl t-pipelines" data-table="pipelines">
             <div class="t-head"><span class="t-name">data_pipelines</span><span class="t-num">S-06</span></div>
             <p class="t-title">Data pipelines &amp; databases</p>
-            <ul><li data-col="pipeline_id" class="pk"><span class="k">PK</span><span class="n">pipeline_id</span></li><li data-col="source_files"><span class="k"></span><span class="n">source_files</span><span class="hint">recurring</span></li><li data-col="etl_steps"><span class="k"></span><span class="n">etl_steps</span></li><li data-col="sql_server_target"><span class="k"></span><span class="n">sql_server_target</span></li><li data-col="load_schedule"><span class="k"></span><span class="n">load_schedule</span></li></ul>
+            <ul><li data-col="pipeline_id" class="pk"><span class="n">pipeline_id</span></li><li data-col="source_files"><span class="n">source_files</span><span class="hint">recurring</span></li><li data-col="etl_steps"><span class="n">etl_steps</span></li><li data-col="sql_server_target"><span class="n">sql_server_target</span></li><li data-col="load_schedule"><span class="n">load_schedule</span></li></ul>
           </div><div class="tbl t-excel" data-table="excel">
             <div class="t-head"><span class="t-name">excel_solutions</span><span class="t-num">S-05</span></div>
             <p class="t-title">Excel solutions</p>
-            <ul><li data-col="workbook_id" class="pk"><span class="k">PK</span><span class="n">workbook_id</span></li><li data-col="cleaned_data_id" class="fk"><span class="k">FK</span><span class="n">cleaned_data_id</span></li><li data-col="workbook_structure"><span class="k"></span><span class="n">workbook_structure</span></li><li data-col="consolidated_files"><span class="k"></span><span class="n">consolidated_files</span></li><li data-col="pivot_tables"><span class="k"></span><span class="n">pivot_tables</span></li></ul>
+            <ul><li data-col="workbook_id" class="pk"><span class="n">workbook_id</span></li><li data-col="cleaned_data_id" class="fk"><span class="n">cleaned_data_id</span></li><li data-col="workbook_structure"><span class="n">workbook_structure</span></li><li data-col="consolidated_files"><span class="n">consolidated_files</span></li><li data-col="pivot_tables"><span class="n">pivot_tables</span></li></ul>
           </div><div class="tbl t-cleaning" data-table="cleaning">
             <div class="t-head"><span class="t-name">data_cleaning</span><span class="t-num">S-01</span></div>
             <p class="t-title">Data cleaning &amp; validation</p>
-            <ul><li data-col="cleaned_data_id" class="pk"><span class="k">PK</span><span class="n">cleaned_data_id</span></li><li data-col="pipeline_id" class="fk"><span class="k">FK</span><span class="n">pipeline_id</span></li><li data-col="consistency_rules"><span class="k"></span><span class="n">consistency_rules</span></li><li data-col="duplicates_removed"><span class="k"></span><span class="n">duplicates_removed</span></li><li data-col="validation_checks"><span class="k"></span><span class="n">validation_checks</span></li></ul>
+            <ul><li data-col="cleaned_data_id" class="pk"><span class="n">cleaned_data_id</span></li><li data-col="pipeline_id" class="fk"><span class="n">pipeline_id</span></li><li data-col="consistency_rules"><span class="n">consistency_rules</span></li><li data-col="duplicates_removed"><span class="n">duplicates_removed</span></li><li data-col="validation_checks"><span class="n">validation_checks</span></li></ul>
           </div><div class="tbl t-analysis" data-table="analysis">
             <div class="t-head"><span class="t-name">data_analysis</span><span class="t-num">S-02</span></div>
             <p class="t-title">Data analysis</p>
-            <ul><li data-col="analysis_id" class="pk"><span class="k">PK</span><span class="n">analysis_id</span></li><li data-col="cleaned_data_id" class="fk"><span class="k">FK</span><span class="n">cleaned_data_id</span></li><li data-col="question"><span class="k"></span><span class="n">question</span></li><li data-col="method"><span class="k"></span><span class="n">method</span><span class="hint">SQL · Python · Excel</span></li><li data-col="findings"><span class="k"></span><span class="n">findings</span></li></ul>
+            <ul><li data-col="analysis_id" class="pk"><span class="n">analysis_id</span></li><li data-col="cleaned_data_id" class="fk"><span class="n">cleaned_data_id</span></li><li data-col="question"><span class="n">question</span></li><li data-col="method"><span class="n">method</span><span class="hint">SQL · Python · Excel</span></li><li data-col="findings"><span class="n">findings</span></li></ul>
           </div><div class="tbl t-dashboards" data-table="dashboards">
             <div class="t-head"><span class="t-name">powerbi_dashboards</span><span class="t-num">S-04</span></div>
             <p class="t-title">Power BI dashboards</p>
-            <ul><li data-col="dashboard_id" class="pk"><span class="k">PK</span><span class="n">dashboard_id</span></li><li data-col="cleaned_data_id" class="fk"><span class="k">FK</span><span class="n">cleaned_data_id</span></li><li data-col="data_model"><span class="k"></span><span class="n">data_model</span></li><li data-col="dax_measures"><span class="k"></span><span class="n">dax_measures</span></li><li data-col="report_pages"><span class="k"></span><span class="n">report_pages</span></li></ul>
+            <ul><li data-col="dashboard_id" class="pk"><span class="n">dashboard_id</span></li><li data-col="cleaned_data_id" class="fk"><span class="n">cleaned_data_id</span></li><li data-col="data_model"><span class="n">data_model</span></li><li data-col="dax_measures"><span class="n">dax_measures</span></li><li data-col="report_pages"><span class="n">report_pages</span></li></ul>
           </div><div class="tbl t-reporting" data-table="reporting">
             <div class="t-head"><span class="t-name">reporting_kpis</span><span class="t-num">S-03</span></div>
             <p class="t-title">Reporting &amp; KPIs</p>
-            <ul><li data-col="report_id" class="pk"><span class="k">PK</span><span class="n">report_id</span></li><li data-col="analysis_id" class="fk"><span class="k">FK</span><span class="n">analysis_id</span></li><li data-col="kpi_definitions"><span class="k"></span><span class="n">kpi_definitions</span></li><li data-col="refresh_cycle"><span class="k"></span><span class="n">refresh_cycle</span><span class="hint">monthly</span></li><li data-col="delivered_report"><span class="k"></span><span class="n">delivered_report</span></li></ul>
+            <ul><li data-col="report_id" class="pk"><span class="n">report_id</span></li><li data-col="analysis_id" class="fk"><span class="n">analysis_id</span></li><li data-col="kpi_definitions"><span class="n">kpi_definitions</span></li><li data-col="refresh_cycle"><span class="n">refresh_cycle</span><span class="hint">monthly</span></li><li data-col="delivered_report"><span class="n">delivered_report</span></li></ul>
           </div>
           <div class="erd-links" hidden><span data-from="pipelines" data-to="cleaning" data-key="pipeline_id"></span><span data-from="cleaning" data-to="excel" data-key="cleaned_data_id"></span><span data-from="cleaning" data-to="analysis" data-key="cleaned_data_id"></span><span data-from="cleaning" data-to="dashboards" data-key="cleaned_data_id"></span><span data-from="analysis" data-to="reporting" data-key="analysis_id"></span></div>
         </div>
       </div>
-      <p class="erd-legend"><span><b>PK</b> primary key</span><span><b>FK</b> foreign key</span><span><b>1</b> one</span><span><b>M</b> many</span><span><span class="crow-demo" aria-hidden="true"></span> one-to-many</span></p>
-      <p class="erd-note">Each table is a service; its rows are what I deliver. Links show which services build on the output of another.</p>
+
       <div class="block-title"><h3>Client reviews</h3><span class="label">Mostaql · 5.0 / 5</span></div>
       <div class="reviews">
         <article class="review">

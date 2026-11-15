@@ -214,7 +214,7 @@ button{font:inherit;color:inherit}
 .erd-hint{display:none;font-family:var(--font-mono);font-size:12px;color:var(--muted);margin-bottom:10px}
 .erd-scroll{overflow-x:auto;overscroll-behavior-x:contain;margin:0 -32px;padding:4px 32px 12px;scrollbar-width:thin}
 .erd-scroll:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:var(--radius)}
-.erd-canvas{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,auto);column-gap:96px;row-gap:28px;min-width:860px;padding-right:40px;align-items:center}
+.erd-canvas{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(3,auto);column-gap:64px;row-gap:16px;min-width:760px;max-width:900px;padding-right:30px;align-items:center}
 .erd-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;font-family:var(--font-mono);font-size:11px;font-weight:500}
 .erd-lines .rel path{fill:none;stroke:var(--border-strong);stroke-width:1.2;transition:stroke .2s,opacity .2s}
 .erd-lines .rel text{fill:var(--muted);transition:fill .2s,opacity .2s}
@@ -230,25 +230,17 @@ button{font:inherit;color:inherit}
 .tbl{position:relative;z-index:1;background:var(--surface);border:1px solid var(--border-strong);border-radius:8px;overflow:hidden;transition:border-color .2s,box-shadow .2s}
 .tbl:hover{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
 .t-cleaning{border-color:var(--accent)}
-.t-head{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 14px;background:var(--sunken);border-bottom:1px solid var(--border);font-family:var(--font-mono)}
+.t-head{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:7px 12px;background:var(--sunken);border-bottom:1px solid var(--border);font-family:var(--font-mono)}
 .t-cleaning .t-head{background:var(--accent-tint);border-bottom-color:var(--accent)}
-.t-name{font-size:12.5px;font-weight:500;color:var(--ink)}
+.t-name{font-size:12px;font-weight:500;color:var(--ink)}
 .t-num{font-size:10px;letter-spacing:.08em;color:var(--accent)}
-.t-title{padding:10px 14px 4px;font-size:14.5px;font-weight:600;color:var(--ink);line-height:1.3}
-.tbl ul{list-style:none;padding:4px 0 8px}
-.tbl li{display:flex;align-items:baseline;gap:8px;padding:4px 14px;font-family:var(--font-mono);font-size:12px;line-height:1.45;color:var(--ink-2)}
-.tbl li .k{flex:0 0 18px;font-size:9.5px;font-weight:500;letter-spacing:.04em;color:var(--muted)}
-.tbl li.pk .k{color:var(--accent)}
+.t-title{padding:8px 12px 2px;font-size:14px;font-weight:600;color:var(--ink);line-height:1.3}
+.tbl ul{list-style:none;padding:3px 0 6px}
+.tbl li{display:flex;align-items:baseline;gap:8px;padding:2.5px 12px;font-family:var(--font-mono);font-size:11.5px;line-height:1.45;color:var(--ink-2)}
+.tbl li.pk{padding-bottom:4px;margin-bottom:2px;border-bottom:1px solid var(--border)}
 .tbl li.pk .n{color:var(--ink);font-weight:500}
+.tbl li.fk .n{color:var(--accent)}
 .tbl li .hint{margin-left:auto;font-size:10.5px;color:var(--muted);white-space:nowrap}
-.erd-legend{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:20px;font-family:var(--font-mono);font-size:12px;color:var(--muted)}
-.erd-legend b{font-weight:500;color:var(--ink);margin-right:4px}
-.erd-legend span span{display:inline-flex;align-items:center}
-.crow-demo{width:26px;height:12px;margin-right:6px;background:linear-gradient(var(--border-strong),var(--border-strong)) 0 50%/16px 1px no-repeat;position:relative}
-.crow-demo::before,.crow-demo::after{content:"";position:absolute;left:16px;top:50%;width:10px;height:1px;background:var(--border-strong);transform-origin:left center}
-.crow-demo::before{transform:rotate(-32deg)}
-.crow-demo::after{transform:rotate(32deg)}
-.erd-note{font-size:14.5px;color:var(--muted);margin-top:8px;max-width:620px}
 
 /* Freelance platform buttons */
 .platforms{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0}
@@ -414,6 +406,7 @@ button{font:inherit;color:inherit}
   .skills,.reviews,.contact{grid-template-columns:minmax(0,1fr)}
   .erd-scroll{margin:0 -20px;padding:4px 20px 12px}
   .erd-hint{display:block}
+  .erd-canvas{min-width:700px;column-gap:48px}
   .identity{max-width:none}
   .id-board{padding:22px 16px}
   .project-hero{padding:28px 0 40px}

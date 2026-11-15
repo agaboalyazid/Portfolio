@@ -149,15 +149,13 @@
         } else if (a.left >= b.right - 1) {     // child is to the left
           ax = a.left; ay = a.y; bx = b.right; by = b.y; dir = -1;
         } else {                                // same column: route down the outer right side
-          var off = 26;
+          var off = 20;
           ax = a.right; ay = a.y; bx = b.right; by = b.y;
           var rx = Math.max(ax, bx) + off;
           d = "M" + ax + " " + ay + " H" + rx + " V" + by + " H" + bx;
           g.appendChild(el("path", { d: d }));
           g.appendChild(el("path", { "class": "one", d: "M" + (ax + 7) + " " + (ay - 6) + " v12" }));
           g.appendChild(el("path", { "class": "many", d: "M" + (bx + 9) + " " + by + " L" + bx + " " + (by - 6) + " M" + (bx + 9) + " " + by + " L" + bx + " " + (by + 6) + " M" + (bx + 9) + " " + by + " H" + bx }));
-          g.appendChild(txt(ax + 12, ay - 9, "1"));
-          g.appendChild(txt(bx + 12, by - 9, "M"));
           svg.appendChild(g); return;
         }
         var mx = (ax + bx) / 2;
@@ -165,14 +163,8 @@
         g.appendChild(el("path", { d: d }));
         g.appendChild(el("path", { "class": "one", d: "M" + (ax + dir * 7) + " " + (ay - 6) + " v12" }));
         g.appendChild(el("path", { "class": "many", d: "M" + (bx - dir * 9) + " " + by + " L" + bx + " " + (by - 6) + " M" + (bx - dir * 9) + " " + by + " L" + bx + " " + (by + 6) + " M" + (bx - dir * 9) + " " + by + " H" + bx }));
-        g.appendChild(txt(ax + dir * 12, ay - 9, "1"));
-        g.appendChild(txt(bx - dir * 12, by - 9, "M"));
         svg.appendChild(g);
       });
-    }
-    function txt(x, y, t) {
-      var e = el("text", { x: x, y: y, "text-anchor": "middle" });
-      e.textContent = t; return e;
     }
     Array.prototype.forEach.call(canvas.querySelectorAll(".tbl"), function (t) {
       var name = t.getAttribute("data-table");
