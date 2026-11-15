@@ -77,6 +77,8 @@ button{font:inherit;color:inherit}
 .card{position:relative;display:flex;flex-direction:column;height:100%;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
 .card:hover{border-color:var(--border-strong)}
 .card-visual{height:168px;background:var(--sunken);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:center;padding:20px}
+.card-visual.has-img{padding:0;overflow:hidden}
+.card-visual.has-img img{width:100%;height:100%;object-fit:cover;object-position:left top}
 .card-body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:10px;flex:1}
 .card h3{font-size:20px;line-height:1.3}
 .card h3 a{text-decoration:none}
@@ -171,6 +173,13 @@ button{font:inherit;color:inherit}
 .figure .flow{max-width:none}
 .figure .flow .node{padding:12px 8px;font-size:12px}
 .figure figcaption{font-family:var(--font-mono);font-size:12px;color:var(--muted);margin-top:14px;letter-spacing:.03em}
+.shot-figure{padding:16px}
+.shot-figure img{display:block;width:auto;max-width:100%;height:auto;margin:0 auto;border:1px solid var(--border);border-radius:4px}
+.pages{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.page-tile{border:1px solid var(--diagram);border-radius:4px;background:var(--surface);padding:14px 16px}
+.page-tile b{display:block;color:var(--ink);font-weight:600;font-size:15px;line-height:1.35;margin:4px 0 8px}
+.page-tile ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:2px;font-family:var(--font-mono);font-size:12.5px;color:var(--ink-2)}
+.narrow-only{display:none}
 .schema{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:center}
 .schema .table{border:1px solid var(--diagram);border-radius:4px;background:var(--surface);padding:12px 14px}
 .schema .table.key{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
@@ -215,6 +224,8 @@ button{font:inherit;color:inherit}
   .section{padding:56px 0}
   .filter{width:100%}
   .filter button{flex:1;padding:8px 6px}
+  .wide-only{display:none}
+  .narrow-only{display:inline}
   .project-grid,.skills,.services,.reviews,.contact{grid-template-columns:minmax(0,1fr)}
   .card-visual{height:140px}
   .timeline li{grid-template-columns:minmax(0,1fr);gap:4px}
@@ -233,7 +244,8 @@ button{font:inherit;color:inherit}
   .figure .flow .node{width:100%}
   .figure .flow .arrow{flex:0 0 16px;width:1px;height:16px}
   .figure .flow .arrow::after{right:-3px;top:auto;bottom:0;border-top:5px solid var(--diagram);border-left:3.5px solid transparent;border-right:3.5px solid transparent;border-bottom:0}
-  .schema{grid-template-columns:minmax(0,1fr)}
+  .schema,.pages{grid-template-columns:minmax(0,1fr)}
+  .shot-figure{padding:8px}
   .data-table{font-size:14px}
   .data-table th,.data-table td{padding:10px 12px}
 }
