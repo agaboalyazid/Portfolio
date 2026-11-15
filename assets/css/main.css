@@ -237,9 +237,9 @@ button{font:inherit;color:inherit}
 .plat:active{transform:translateY(1px)}
 .plat:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .plat{padding:0 18px}
-.plat-logo{display:block;width:auto;height:20px}
-.logo-upwork{height:18px}
-.logo-mostaql{height:21px}
+.plat-logo{display:block;width:auto;height:17px}
+.logo-upwork{height:15px}
+.logo-mostaql{height:18px}
 
 .reviews{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .review{border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px 28px 24px;background:var(--surface);display:flex;flex-direction:column;gap:22px;transition:border-color .2s}
