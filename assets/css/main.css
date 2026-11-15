@@ -81,7 +81,7 @@ button{font:inherit;color:inherit}
 .block-title .label{white-space:nowrap}
 
 /* ---------- Hero ---------- */
-.hero{padding:104px 0 112px;position:relative;isolation:isolate}
+.hero{padding:72px 0 64px;position:relative;isolation:isolate}
 .hero::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:32px 32px;background-position:center top;-webkit-mask-image:radial-gradient(ellipse 75% 70% at 70% 35%,#000 20%,transparent 75%);mask-image:radial-gradient(ellipse 75% 70% at 70% 35%,#000 20%,transparent 75%)}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:72px;align-items:center}
 .hero-meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px}
@@ -90,7 +90,7 @@ button{font:inherit;color:inherit}
 .loc svg{width:14px;height:14px}
 .hero h1{font-size:clamp(42px,1.4rem + 3.8vw,72px);line-height:1;letter-spacing:-.03em;margin-top:18px}
 .tagline{font-size:clamp(17px,.95rem + .35vw,20px);line-height:1.45;color:var(--ink);font-weight:500;letter-spacing:-.01em;margin-top:20px;max-width:520px}
-.summary{display:flex;flex-direction:column;gap:10px;margin-top:16px;max-width:500px;font-size:15px;line-height:1.65;color:var(--muted)}
+.summary{display:flex;flex-direction:column;gap:12px;margin-top:16px;max-width:520px;font-size:16px;line-height:1.65;color:var(--ink-2)}
 .hero .actions{margin-top:28px}
 .availability{font-size:13.5px;color:var(--muted);margin-top:14px}
 
@@ -112,7 +112,7 @@ button{font:inherit;color:inherit}
 .identity figcaption{display:grid;grid-template-columns:1fr 44px 1fr;padding:12px 24px 0;text-align:center}
 .identity figcaption .label{font-size:10.5px}
 .identity figcaption .mid{color:var(--accent)}
-.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:80px;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--surface)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:40px;border:1px solid var(--border);border-radius:var(--radius-lg);background:var(--surface)}
 .stats div{display:flex;flex-direction:column;padding:22px 24px;position:relative}
 .stats div::before{content:"";position:absolute;left:24px;top:0;width:20px;height:2px;background:var(--accent)}
 .stats div+div{border-left:1px solid var(--border)}
@@ -247,7 +247,7 @@ button{font:inherit;color:inherit}
 .review-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:18px;border-bottom:1px solid var(--border)}
 .platform{display:inline-flex;color:var(--ink)}
 .mostaql-logo{width:auto;height:22px}
-.client{font-family:var(--font-arabic);font-weight:500;font-size:16px;color:var(--ink)}
+.client{font-family:var(--font-arabic);font-weight:400;font-size:16px;color:var(--ink)}
 .review blockquote{font-family:var(--font-arabic);direction:rtl;text-align:right;font-size:19px;line-height:1.8;color:var(--ink);flex:1}
 .review-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 .review .stars{color:var(--accent);letter-spacing:2px;font-size:15px}
@@ -338,8 +338,9 @@ button{font:inherit;color:inherit}
   .identity{justify-self:start;max-width:380px}
   .skills{grid-template-columns:repeat(2,minmax(0,1fr))}
   .project-grid > li[data-category="analytics"]{grid-column:span 3}
-  .services{column-gap:44px}
-  .hub{width:calc((100% - 88px) / 3)}
+  .services{column-gap:40px}
+  .hub{width:calc((100% - 80px) / 3);padding:20px 16px}
+  .hub-title{font-size:18px}
 
   .cert-list li{grid-template-columns:minmax(0,1fr) 180px 80px}
   .cert-list .when{display:none}
@@ -350,19 +351,26 @@ button{font:inherit;color:inherit}
   .site-nav a{padding:12px 0;border-bottom:1px solid var(--border)}
   .site-nav a[aria-current="true"]{border-bottom-color:var(--border);color:var(--accent)}
   .menu-toggle{display:inline-grid}
+  .star-lines{display:none}
+  .hub{position:relative;left:auto;top:auto;transform:none;width:auto;text-align:left;padding:18px 20px;margin-bottom:12px}
+  .services{grid-template-columns:minmax(0,1fr);grid-template-rows:none;gap:10px;padding-left:24px}
+  .services::before{content:"";position:absolute;left:8px;top:-12px;bottom:32px;width:1px;background:var(--border-strong)}
+  .services > .svc{grid-column:auto;grid-row:auto}
+  .svc::before{content:"";position:absolute;left:-17px;top:50%;width:16px;height:1px;background:var(--border-strong)}
+  .svc{padding:14px 16px}
 }
 @media (max-width:760px){
-  :root{--space-section:72px;--space-head:32px}
+  :root{--space-section:56px;--space-head:28px}
   body{font-size:16px}
   .wrap{padding:0 20px}
   .site-nav{padding:8px 20px 16px}
   .header-cv{display:none}
-  .hero{padding:56px 0 64px}
-  .summary{font-size:14.5px}
+  .hero{padding:36px 0 40px}
+  .summary{font-size:15.5px}
   .hero .intro{font-size:17px}
   .hero .actions .btn{flex:1 1 100%}
   .hero::before{-webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 70%,#000 15%,transparent 70%);mask-image:radial-gradient(ellipse 90% 60% at 50% 70%,#000 15%,transparent 70%)}
-  .stats{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:48px}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr));margin-top:32px}
   .stats div{padding:18px 18px}
   .stats div+div{border-left:0}
   .stats div:nth-child(even){border-left:1px solid var(--border)}
@@ -378,7 +386,7 @@ button{font:inherit;color:inherit}
   .project-grid > li,.project-grid > li[data-category="analytics"]{grid-column:auto}
   .card-visual,.project-grid > li[data-category="analytics"] .card-visual{height:150px}
   .card-body,.project-grid > li[data-category="analytics"] .card-body{padding:20px 22px 22px}
-  .block-title{margin:56px 0 16px}
+  .block-title{margin:44px 0 16px}
   .timeline > li{grid-template-columns:minmax(0,1fr);gap:4px;padding:0 0 28px 28px}
   .timeline > li::before{left:0;margin-left:4px;top:9px}
   .timeline > li::after{left:0;margin-left:0}
@@ -391,13 +399,7 @@ button{font:inherit;color:inherit}
   .simple-table tr:last-child{border-bottom:0}
   .simple-table th,.simple-table td,.simple-table td.when{padding:0;border:0;text-align:left;white-space:normal}
   .skills,.reviews,.contact{grid-template-columns:minmax(0,1fr)}
-  .star-lines{display:none}
-  .hub{position:relative;left:auto;top:auto;transform:none;width:auto;text-align:left;padding:18px 20px;margin-bottom:12px}
-  .services{grid-template-columns:minmax(0,1fr);grid-template-rows:none;gap:10px;padding-left:24px}
-  .services::before{content:"";position:absolute;left:8px;top:-12px;bottom:32px;width:1px;background:var(--border-strong)}
-  .services > .svc{grid-column:auto;grid-row:auto}
-  .svc::before{content:"";position:absolute;left:-17px;top:50%;width:16px;height:1px;background:var(--border-strong)}
-  .svc{padding:14px 16px}
+  .services{gap:8px}
   .review{padding:22px 20px 20px;gap:18px}
   .mostaql-logo{height:19px}
   .review blockquote{font-size:18px}
