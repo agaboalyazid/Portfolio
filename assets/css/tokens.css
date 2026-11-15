@@ -16,6 +16,7 @@
   --accent:#0F6E5C; --accent-hover:#0B5A4B; --accent-tint:#E3F1EE; --on-accent:#FFFFFF;
   --diagram:#2B3036;
   --band:#F2F1EB; --band-accent:#EEF4F1;
+  --grid-line:#EBEBE4; --grid-dot:#D6D8D3;
   --font-sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
   --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
   --font-arabic:"IBM Plex Sans Arabic","IBM Plex Sans",system-ui,sans-serif;
@@ -32,6 +33,7 @@
   --accent:#4FC3A8; --accent-hover:#6FD3BB; --accent-tint:#16302A; --on-accent:#0B1F1A;
   --diagram:#B9BEC4;
   --band:#16191C; --band-accent:#13211E;
+  --grid-line:#1C2023; --grid-dot:#2C3136;
   color-scheme:dark;
 }
 
@@ -44,6 +46,7 @@
     --accent:#4FC3A8; --accent-hover:#6FD3BB; --accent-tint:#16302A; --on-accent:#0B1F1A;
     --diagram:#B9BEC4;
     --band:#16191C; --band-accent:#13211E;
+  --grid-line:#1C2023; --grid-dot:#2C3136;
     color-scheme:dark;
   }
 }
